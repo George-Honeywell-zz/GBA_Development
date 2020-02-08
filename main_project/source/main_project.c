@@ -7,8 +7,9 @@
 #include <stdio.h>
 
 
-extern void myfunc(int* answer);
-extern void test_function(int* result);
+//extern void myfunc(int* answer);
+extern void my_function(int* x, int* y, int* total);
+//extern void test_function(int* result);
 // need "extern" because the function body is in an external .s file
 
 //---------------------------------------------------------------------------------
@@ -29,25 +30,23 @@ int main(void) {
 	iprintf("\x1b[2J");
 
 
-	int x = 0;
-	int test = 0;
+	int x = 1;
+	int y = 2;
+	int total = 0;
 
-
+	
 	// main loop
 	while (1) 
-	{
-		
-		myfunc(&x); // this should update the value of x using the asm function
-		test_function(&test);
-
+	{		
+		//myfunc(&x); // this should update the value of x using the asm function
+		//test_function(&test);
+		my_function(&x, &y, &total);
 
 		// ansi escape sequence to set print co-ordinates
 		// /x1b[line;columnH
-		printf("\x1b[10;10Hresult = %d", x);
-		printf("\x1b[5;5HResult of Test = %d", test);
-
-
-
+		//printf("\x1b[10;10Hresult = %d", x);
+		//printf("\x1b[5;5HResult of Test = %d", test);
+		printf("\x1b[5;5HTotal = %d", x);
 
 
 		VBlankIntrWait();

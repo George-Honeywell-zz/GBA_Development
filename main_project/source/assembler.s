@@ -1,12 +1,12 @@
 .THUMB				@ turn on thumb
 .ALIGN  2			@ align code correctly for GBA
-.GLOBL  myfunc		@ name of function goes here
+.GLOBL  my_function		@ name of function goes here
 
 
 
 
 .THUMB_FUNC			@ we are about to declare a thumb function
-myfunc:				@ function start
+my_function:				@ function start
 
 
 
@@ -18,9 +18,15 @@ push { r4-r7, lr }	@ push r4-r7 and link register onto stack. Your function migh
 @ the magic happens here!
 @ r0-r3 will automatically contain the parameters sent when calling the function.
 
-	ldr r4, [r0]		@ hopefully whichever function called this left a memory address in r0 - dereference value into r4
-	add r4, #1			@ add 1 to value in r4
-	str r4, [r0] 		@ store data in r4 at r0 address
+	@ ldr r4, [r0]		@ hopefully whichever function called this left a memory address in r0 - dereference value into r4
+	@ add r4, #5		@ add 1 to value in r4
+	@ str r4, [r0] 		@ store data in r4 at r0 address
+
+
+	ldr r4, [r0]
+	ldr r5, [r1]
+	add r6, r4, r5
+	str r4, [r2]
 
 
 pop { r4-r7 }		@ pop first 4 values from stack back into r4-r7, and also
