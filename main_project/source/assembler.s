@@ -6,7 +6,7 @@
 
 
 .THUMB_FUNC			@ we are about to declare a thumb function
-my_function:				@ function start
+my_function:		@ function start
 
 
 
