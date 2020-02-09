@@ -1,5 +1,5 @@
 main_project.o: \
- C:/Users/George/Desktop/GBA_Development/main_project/source/main_project.c \
+ C:/Users/George/Desktop/GBA_development/main_project/source/main_project.c \
  C:/devkitPro/libgba/include/gba_console.h \
  C:/devkitPro/libgba/include/gba_base.h \
  C:/devkitPro/libgba/include/gba_types.h \

@@ -1932,7 +1932,7 @@ LOAD c:/devkitpro/devkitarm/bin/../lib/gcc/arm-none-eabi/9.1.0/../../../../arm-n
 END GROUP
 LOAD c:/devkitpro/devkitarm/bin/../lib/gcc/arm-none-eabi/9.1.0/thumb/crtend.o
 LOAD c:/devkitpro/devkitarm/bin/../lib/gcc/arm-none-eabi/9.1.0/thumb/crtn.o
-OUTPUT(C:/Users/George/Desktop/GBA_Development/main_project/main_project.elf elf32-littlearm)
+OUTPUT(C:/Users/George/Desktop/GBA_development/main_project/main_project.elf elf32-littlearm)
 
 .debug_ranges   0x0000000000000000      0x190
  .debug_ranges  0x0000000000000000       0x10 main_project.o

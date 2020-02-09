@@ -23,10 +23,12 @@ push { r4-r7, lr }	@ push r4-r7 and link register onto stack. Your function migh
 	@ str r4, [r0] 		@ store data in r4 at r0 address
 
 
-	ldr r4, [r0]
-	ldr r5, [r1]
-	add r6, r4, r5
-	str r4, [r2]
+	ldr r3, [r0]
+	ldr r1, [r1]
+	add r3, r3, r1
+	str r3, [r2]
+
+
 
 
 pop { r4-r7 }		@ pop first 4 values from stack back into r4-r7, and also

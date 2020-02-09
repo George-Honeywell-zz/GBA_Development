@@ -30,9 +30,9 @@ int main(void) {
 	iprintf("\x1b[2J");
 
 
-	int x = 1;
-	int y = 2;
-	int total = 0;
+	int x = 1;		//R0 
+	int y = 2;		//R1
+	int total = 0;	//R2
 
 	
 	// main loop
@@ -46,7 +46,7 @@ int main(void) {
 		// /x1b[line;columnH
 		//printf("\x1b[10;10Hresult = %d", x);
 		//printf("\x1b[5;5HResult of Test = %d", test);
-		printf("\x1b[5;5HTotal = %d", x);
+		printf("\x1b[5;5HTotal = %d", total);
 
 
 		VBlankIntrWait();
