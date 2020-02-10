@@ -1,2 +1,1 @@
-assembler.o: \
- C:/Users/George/Desktop/GBA_development/main_project/source/assembler.s
+assembler.o: D:/843814/GBA_Development/main_project/source/assembler.s

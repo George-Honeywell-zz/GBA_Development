@@ -46,7 +46,10 @@ int main(void) {
 		// /x1b[line;columnH
 		//printf("\x1b[10;10Hresult = %d", x);
 		//printf("\x1b[5;5HResult of Test = %d", test);
-		printf("\x1b[5;5HTotal = %d", total);
+		printf("\x1b[1;1HX = %d", x);
+		printf("\x1b[2;1HY = %d", y);
+		printf("\x1b[3;1HTotal = %d", total);
+
 
 
 		VBlankIntrWait();
