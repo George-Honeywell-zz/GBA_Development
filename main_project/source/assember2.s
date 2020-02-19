@@ -10,17 +10,19 @@ push {r4-r7, lr}
 	@assembly here
 
 	@ ~~~ Increases the TEST variable by 5 with each loop.
-	@ldr r4, [r0]
-	@add r4, #5
-	@str r4, [r0]
+	ldr r5, [r0]
+	add r5, #1
+	str r5, [r0]
+
+	ldr r5, [r1]
+	add r5, #2
+	str r5, [r1]
 
 	@ ~~~ Testing assembly FOR loop. Branching & Comparing
 	
 
 	@ ~~~ LDR Practice
-	@ldr r4, [r0]
-	@add r4, #1
-	@str r4, [r0]
+
 
 pop { r4-r7 }
 pop { r3 }
