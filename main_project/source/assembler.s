@@ -22,11 +22,6 @@ push { r4-r7, lr }	@ push r4-r7 and link register onto stack. Your function migh
 	@ add r4, #5		@ add 1 to value in r4
 	@ str r4, [r0] 		@ store data in r4 at r0 address
 
-	labelAddVariables:
-	ldr r3, [r0]
-	ldr r1, [r1]
-	add r3, r3, r1
-	str r3, [r2]
 
 
 

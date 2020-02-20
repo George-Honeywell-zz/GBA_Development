@@ -8,10 +8,10 @@ add_variables:
 push {r4-r7, lr}
 	@assembly here
 
-	ldr r2, [r0]
+	ldr r0, [r0]
 	ldr r1, [r1]
-	add r0, r1, r2
-	str r2, [r1]
+	add r1, r0, r1
+	str r1, [r2]
 
 	
 

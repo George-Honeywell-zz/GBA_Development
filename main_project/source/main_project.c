@@ -8,7 +8,6 @@
 
 
 //extern void myfunc(int* answer);
-extern void my_function(int* x, int* y, int* total);
 extern void test_function(int* test, int* test2);
 extern void add_variables(int* num_one, int* num_two, int* answer);
 // need "extern" because the function body is in an external .s file
@@ -30,18 +29,13 @@ int main(void) {
 	// /x1b[line;columnH
 	iprintf("\x1b[2J");
 
-	//assembler.s
-	int x = 3;		//R0 - assembler.s
-	int y = 2;		//R1 - assembler.s
-	int total = 0;	//R2 - assembler.s
-
 	//assembler2.s
 	int test = 0;		//R0 - assembler2.s
 	int test2 = 0;		//R1 - assembler2.s
 
 	//assembler3.s
-	int num_one = 2;	//R0 - add_variables.s
-	int num_two = 3;	//R1 - add_variables.s
+	int num_one = 15;	//R0 - add_variables.s
+	int num_two = 74;	//R1 - add_variables.s
 	int answer = 0;		//R2 - add_variables.s
 
 	// main loop
@@ -49,16 +43,12 @@ int main(void) {
 	{		
 		//myfunc(&x); // this should update the value of x using the asm function
 		test_function(&test, &test2);
-		my_function(&x, &y, &total);
 		add_variables(&num_one, &num_two, &answer);
 
 		// ansi escape sequence to set print co-ordinates
 		// /x1b[line;columnH
 		//printf("\x1b[10;10Hresult = %d", x);
 		//printf("\x1b[5;5HResult of Test = %d", test);
-		printf("\x1b[1;1HX = %d", x);
-		printf("\x1b[2;1HY = %d", y);
-		printf("\x1b[3;1HTotal = %d", total);
 		printf("\x1b[4;1Htest_function R0: %d", test);
 		printf("\x1b[5;1Htest_function R1: %d", test2);
 
