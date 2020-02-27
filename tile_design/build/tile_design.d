@@ -1,5 +1,5 @@
 tile_design.o: \
- C:/Users/George/Desktop/GBA_development/tile_design/source/tile_design.c \
+ C:/Users/George/Desktop/GBA_Development/tile_design/source/tile_design.c \
  C:/devkitPro/libgba/include/gba_console.h \
  C:/devkitPro/libgba/include/gba_base.h \
  C:/devkitPro/libgba/include/gba_types.h \
