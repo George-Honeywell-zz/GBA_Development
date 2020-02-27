@@ -29,7 +29,7 @@ int main(void) {
 		= 0000 - shows the dot in the emulator as BLACK
 		= 0001 - shows the dot in the emulator as WHITE
 	*/
-	unsigned int* ptr =  (unsigned int*)0x6000c20; //'a'
+	unsigned int* ptr =  (unsigned int*)0x600038f; //'a'
 	unsigned int* ptr2 = (unsigned int*)0x6000c40;
 	//unsigned int* ptr3 = (unsigned int*)0x6000c60;
 	//ptr[1] = 0001; 
@@ -38,7 +38,7 @@ int main(void) {
 	//This is done from RIGHT to LEFT.
 	//for (int i = 0; i < 8; i++) {
 		//for (int j = 0; j < 8; j++) {
-			ptr[0] = 0001 << 4;
+			ptr[0] = 0b0001;
 			ptr[1] = 0b00000000000000000000000000000000;
 			ptr[2] = 0b00000000000000000000000000000000;
 			ptr[3] = 0b00000000000000000000000000000000;
