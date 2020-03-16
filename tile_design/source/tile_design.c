@@ -3,6 +3,8 @@
 #include <gba_video.h>
 #include <gba_interrupt.h>
 #include <gba_systemcalls.h>
+#include <../../../../../devkitPro/libgba/include/gba_input.h>
+
 
 #include <stdio.h>
 
@@ -15,6 +17,9 @@ int main(void) {
 	// the vblank interrupt must be enabled for VBlankIntrWait() to work
 	irqInit();
 	irqEnable(IRQ_VBLANK);
+	scanKeys();
+
+	keysHeld(1<<0);
 
 	// generic setup function
 	consoleDemoInit();
@@ -78,6 +83,10 @@ int main(void) {
 		// ansi escape sequence to set print co-ordinates
 		// /x1b[line;columnH
 		iprintf("\x1b[2;0Ha b c d e f g h i j\nk l m n o p q r\ns t u v w x y z");
+
+		if (keysHeld(1<<0)) {
+			iprintf("\x1b[8;0HTest");
+		}
 
 
 
