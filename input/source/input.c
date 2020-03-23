@@ -27,7 +27,7 @@ int main(void) {
 	int b = 0;
 	int c = 0;
 	int d = 0;
-	u16 buttonPress = 0;
+	
 
 
 	// main loop
@@ -35,27 +35,31 @@ int main(void) {
 	{
 		VBlankIntrWait();
 		scanKeys();
-		if (keysDown(1)) {
+		u16 buttonPressed = keysDown();
+
+
+		if (buttonPressed & KEY_A) {
 			iprintf("\x1b[0;0HKeys Down.");
-			iprintf("\x1b[1;0HZ(a) Key Pressed. %d", a);
+			iprintf("\x1b[1;0HA Key Pressed. %d", a);
 			a++;
 		}
+
 		iprintf("\x1b[2;0H~~~~~~~~~~~~~~~");
-		if (keysDownRepeat(2)) {
+		if (buttonPressed & KEY_B) {
 			iprintf("\x1b[3;0HKeys Down Repeat.");
-			iprintf("\x1b[4;0HZ(a) Key Pressed. %d", b);
+			iprintf("\x1b[4;0HB Key Pressed. %d", b);
 			b++;
 		}
 		iprintf("\x1b[5;0H~~~~~~~~~~~~~~~");
-		if (keysUp(4)) {
+		if (buttonPressed & KEY_L) {
 			iprintf("\x1b[6;0HKeys Up.");
-			iprintf("\x1b[7;0HZ(a) Key Pressed. %d", c);
+			iprintf("\x1b[7;0HR Key Pressed. %d", c);
 			c++;
 		}
 		iprintf("\x1b[8;0H~~~~~~~~~~~~~~~");
-		if (keysHeld(8)) {
+		if (buttonPressed & KEY_R) {
 			iprintf("\x1b[9;0HKeys Held.");
-			iprintf("\x1b[10;0HZ(a) Key Pressed. %d", d);
+			iprintf("\x1b[10;0HL Key Pressed. %d", d);
 			d++;
 		}
 	}
